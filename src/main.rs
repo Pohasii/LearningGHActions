@@ -16,7 +16,7 @@ const INACTIVE_TIME: u64 = 30;
 fn main() {
     println!("Server Started!");
 
-    let addr: SocketAddr = SocketAddr::from(([127, 0, 0, 1], 8888));
+    let addr: SocketAddr = SocketAddr::from(([0, 0, 0, 0], 12345));
     let socket: UdpSocket = UdpSocket::bind(addr).expect("couldn't bind to address");
 
     // let mut connections: Vec<Client> = Vec::new();

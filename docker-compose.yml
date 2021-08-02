@@ -1,7 +1,16 @@
 version: "3"
 services:
-  main:
-    build: ./
+  rust_udp_server:
+    image: pogasiid/rust_server:latest
+    container_name: udpServer
     restart: always
     ports:
-        - "8888:8888/udp"
+      - 12345:12345/udp
+#
+#version: "3"
+#services:
+#  main:
+#    build: ./
+#    restart: always
+#    ports:
+#      - "8888:8888/udp"
