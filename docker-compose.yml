@@ -5,12 +5,13 @@ services:
     container_name: udpServer
     restart: always
     ports:
-      - 12345:12345/udp
-#
+      - 55442:55442/udp
+
 #version: "3"
 #services:
 #  main:
 #    build: ./
+#    container_name: udpServer
 #    restart: always
 #    ports:
-#      - "8888:8888/udp"
+#      - 55442:55442/udp

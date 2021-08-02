@@ -20,4 +20,6 @@ WORKDIR /app
 # Copy our build
 COPY --from=builder /app/target/release/fastUdpSocket ./
 
+EXPOSE 55442/udp
+
 CMD ["./fastUdpSocket"]
