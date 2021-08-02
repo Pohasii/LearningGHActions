@@ -66,3 +66,15 @@ jobs:
         with:
           push: true
           tags: pogasiid/rust_server:latest
+          
+      - 
+        name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.SHH_HOST }}
+            key: ${{ secrets.SSH_KEY }}
+            username: ${{ secrets.SSH_USERNAME }}
+            
+            script: |
+                cd ~/
+                docker-compose down && docker-compose up -d
