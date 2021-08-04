@@ -44,7 +44,6 @@ fn main() {
 }
 
 fn listener(socket: &UdpSocket, sender: mpsc::Sender<Sms>, conns: ConType) {
-
     let mut buffer: [u8; 1400] = [0; 1400];
     loop {
         let (len, addr) = socket.recv_from(&mut buffer).expect("Didn't receive data");
