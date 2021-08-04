@@ -51,7 +51,6 @@ fn listener(socket: &UdpSocket, sender: mpsc::Sender<Sms>, conns: ConType) {
     // sender:mpsc::Sender<Vec<u8>>
     // socket_addr: &SocketAddr
     // let socket:UdpSocket = UdpSocket::bind(socket_addr).expect("couldn't bind to address");
-    // let next = socket.try_clone();
     //&mut Vec<Client> //  Rc<Vec<Client>> &mut Mutex<Vec<Client>>
     let mut buffer: [u8; 1400] = [0; 1400];
     loop {
