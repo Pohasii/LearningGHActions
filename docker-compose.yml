@@ -5,13 +5,13 @@ services:
     container_name: udpServer
     restart: always
     ports:
-      - 55442:55442/udp
+      - "55442:55442/udp"
 
 #version: "3"
 #services:
-#  main:
+#  rust_udp_server:
 #    build: ./
-#    container_name: udpServer
+#    #container_name: udpServer
 #    restart: always
 #    ports:
-#      - 55442:55442/udp
+#      - "55442:55442/udp"

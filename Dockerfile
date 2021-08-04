@@ -1,26 +1,24 @@
-####################################################################################################
-## Builder
-####################################################################################################
-FROM rust:1.54.0-alpine3.13 AS builder
+#
+#FROM rust:latest AS builder
+#WORKDIR /app
+#COPY ./ .
+#RUN cargo install --path .
+#
+#
+#FROM alpine:latest
+## debian:buster-slim
+#WORKDIR /app
+#COPY --from=builder /app/target/release/fastUdpSocket ./
+#EXPOSE 55442/udp
+#CMD ["./fastUdpSocket"]
 
+FROM rust:latest as builder
 WORKDIR /app
-
 COPY ./ .
+RUN cargo install --path .
 
-# We no longer need to use the x86_64-unknown-linux-musl target
-RUN cargo build --release
-
-####################################################################################################
-## Final image
-####################################################################################################
-FROM alpine:latest
-# debian:buster-slim
-
+FROM debian:buster-slim
+#RUN apt-get update && apt-get install -y extra-runtime-dependencies && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-
-# Copy our build
 COPY --from=builder /app/target/release/fastUdpSocket ./
-
-EXPOSE 55442/udp
-
 CMD ["./fastUdpSocket"]
