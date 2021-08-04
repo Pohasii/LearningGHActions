@@ -76,8 +76,5 @@ jobs:
             username: ${{ secrets.SSH_USERNAME }}
             
             script: |
-                pwd
                 cd ~/
-                pwd
-                ls
                 docker-compose down && docker-compose up -d
